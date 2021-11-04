@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "cross-env NODE_ENV=dev nodemon ./app.js"
+    "dev": "cross-env NODE_ENV=dev nodemon ./app.js"
   },
   "author": "",
   "license": "ISC",
