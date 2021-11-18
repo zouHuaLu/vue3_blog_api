@@ -20,6 +20,17 @@ const getAllShuoShuo = () => {
     return execSql(sql)
 }
 
+const checkUsername = (username) => {
+    const sql = `SELECT username FROM table_user WHERE username='${username}'`
+    return execSql(sql)
+}
+
+// 插入新用户的用户名和密码
+const insertUser=(username,pwd)=>{
+    const sql = `INSERT INTO table_user (username,password) VALUES ('${username}','${pwd}')`
+    return execSql(sql)
+}
+
 module.exports = {
-    getLatestArticles,getLatestShuoShuo,getAllArticles,getAllShuoShuo
+    getLatestArticles,getLatestShuoShuo,getAllArticles,getAllShuoShuo,insertUser,checkUsername
 }
