@@ -14,4 +14,4 @@
 
 4. 返回的Token前端需要保存在请求头`Authorization`中，在需要鉴权的地方带上这个请求头，用来鉴权
 
-5. 服务器端可以通过`req.header.authorization`来请求头中`Authorization`的数据
+5. 服务器端可以通过`req.headers.authorization`来请求头中`Authorization`的数据
