@@ -31,6 +31,11 @@ const insertUser=(username,pwd)=>{
     return execSql(sql)
 }
 
+const checkUser = (username,pwd)=>{
+    const sql = `SELECT * FROM table_user WHERE username='${username}' AND password='${pwd}'`
+    return execSql(sql)
+}
+
 module.exports = {
-    getLatestArticles,getLatestShuoShuo,getAllArticles,getAllShuoShuo,insertUser,checkUsername
+    getLatestArticles,getLatestShuoShuo,getAllArticles,getAllShuoShuo,insertUser,checkUsername,checkUser
 }

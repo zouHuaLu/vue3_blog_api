@@ -1,7 +1,7 @@
 const express = require('express')
 const cors = require('cors'); // 解决跨域
 const column = require('./routes/column')
-const register = require('./routes/regiest');
+const user = require('./routes/user');
 
 // 端口号
 const port = 8082
@@ -15,7 +15,7 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 
 app.use(`${apiPath}/column`,column)
-app.use('/api',register)
+app.use('/api',user)
 app.get('/', (req, res) => res.send('Hello World!'))
 
 app.listen(port, () => console.log(`服务已启动：127.0.0.1:${port}`))
