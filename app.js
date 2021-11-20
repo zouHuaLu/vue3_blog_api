@@ -15,7 +15,7 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 
 app.use(`${apiPath}/column`,column)
-app.use('/api',user)
-app.get('/', (req, res) => res.send('Hello World!'))
+app.use(`${apiPath}/user`,user)
+// app.get('/', (req, res) => res.send('Hello World!'))
 
 app.listen(port, () => console.log(`服务已启动：127.0.0.1:${port}`))

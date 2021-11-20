@@ -20,17 +20,18 @@ const getAllShuoShuo = () => {
     return execSql(sql)
 }
 
+// 登录
 const checkUsername = (username) => {
     const sql = `SELECT username FROM table_user WHERE username='${username}'`
     return execSql(sql)
 }
 
-// 插入新用户的用户名和密码
+// 注册_插入新用户的用户名和密码
 const insertUser=(username,pwd)=>{
     const sql = `INSERT INTO table_user (username,password) VALUES ('${username}','${pwd}')`
     return execSql(sql)
 }
-
+// 校验权限
 const checkUser = (username,pwd)=>{
     const sql = `SELECT * FROM table_user WHERE username='${username}' AND password='${pwd}'`
     return execSql(sql)
