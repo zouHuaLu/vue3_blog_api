@@ -37,9 +37,6 @@ router.post('/login',async (req,res)=>{
             const rule = {id:data[0].id,name:data[0].username}
             // 生成token
             const token = tokenJS.setToken(rule)
-            // 获取token
-            // console.log(tokenJS.getToken(token));
-            // tokenJS.getToken(token)
             return successData('data','登陆成功',token)
         }else{
             return failData('用户不存在或用户名/密码错误')
@@ -54,7 +51,6 @@ router.post('/login',async (req,res)=>{
 // 接口，验证token，回调
 router.get('/current',async (req,res)=>{
     let token = req.headers.authorization
-    console.log(token);
     let result = await tokenJS.getToken(token).then(data=>{
         return  successData('data','验证成功',data)
     }).catch((err)=>{
