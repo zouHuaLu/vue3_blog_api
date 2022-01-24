@@ -1,6 +1,6 @@
 const express = require('express')
 const { successData, failData } = require("../model/resData");
-const { login } = require('../controller/puiblish')
+const { login,addArticle } = require('../controller/puiblish')
 
 const router = express.Router()
 
@@ -11,6 +11,16 @@ router.post('/login', async (req, res) => {
             return successData('msg','用户不存在')
         }
         return successData('msg', data[0])
+    }).catch(err => {
+        return failData(err)
+    })
+    res.send(result)
+})
+
+router.post('/addArticle',async(req,res)=>{
+    console.log(req.body)
+    const result = await addArticle(req.body).then(data => {
+        return successData('msg','发表成功')
     }).catch(err => {
         return failData(err)
     })
