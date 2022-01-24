@@ -18,7 +18,6 @@ router.post('/login', async (req, res) => {
 })
 
 router.post('/addArticle',async(req,res)=>{
-    console.log(req.body)
     const result = await addArticle(req.body).then(data => {
         return successData('msg','发表成功')
     }).catch(err => {
