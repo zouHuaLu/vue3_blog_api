@@ -11,7 +11,19 @@ const addArticle = (data) => {
     return execSql(sql)
 }
 
+const getAllArticles = () => {
+ const sql = `SELECT * FROM articles ORDER BY _id desc`   
+ return execSql(sql)
+}
+
+const deleteArticle = (id) => {
+    const sql = `DELETE FROM articles WHERE _id='${id}'`
+    return execSql(sql)
+}
+
 module.exports = {
     login,
-    addArticle
+    addArticle,
+    getAllArticles,
+    deleteArticle
 }
